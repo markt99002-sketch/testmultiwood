@@ -2,64 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Portal | Welcome</title>
+    <title>Welcome</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Show QR properly */
+        #qrcode {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <img src="logo.png" class="logo" alt="Company Logo">
-        <h1>Welcome to our <br><span>Product Portal</span></h1>
-        <p class="subtitle">Please review and accept the terms to proceed to your downloads.</p>
-    </header>
+    <!-- Logo -->
+    <img src="logo.png" class="logo" alt="Company Logo">
 
-    <div class="content-card">
-        <div class="terms-box">
-            <p>By proceeding, you agree to view and download product documents responsibly. These files are for authorized use only.</p>
-        </div>
+    <!-- Help Text -->
+    <h2>Welcome to Our Product Portal</h2>
+    <p>Please accept terms & conditions to continue.</p>
 
-        <div class="selection-area">
-            <label class="checkbox-container">
-                <input type="checkbox" id="accept">
-                <span class="checkmark"></span>
-                I accept the Terms & Conditions
-            </label>
-        </div>
-
-        <button class="btn-primary" onclick="proceed()">Access Documents</button>
-
-        <div id="qrcode-wrapper">
-            <div id="qrcode"></div>
-            <p class="qr-text">Scan to view on mobile</p>
-        </div>
+    <!-- Terms -->
+    <div class="terms-box">
+        <p>
+            By proceeding, you agree to view product documents responsibly.
+        </p>
     </div>
+
+    <!-- Checkbox -->
+    <input type="checkbox" id="accept">
+    <label for="accept">I accept Terms & Conditions</label>
+
+    <br><br>
+
+    <!-- Button -->
+    <button onclick="proceed()">Proceed</button>
+
+    <!-- ✅ QR Code visible here -->
+    <div id="qrcode"></div>
 </div>
 
+<script src="script.js"></script>
+
+<!-- QR Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script>
-    // Initialize QR Code
     new QRCode(document.getElementById("qrcode"), {
         text: "https://markt99002-sketch.github.io/testmultiwood",
-        width: 140,
-        height: 140,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
+        width: 150,
+        height: 150
     });
-
-    function proceed() {
-        const isAccepted = document.getElementById('accept').checked;
-        if(isAccepted) {
-            alert("Access Granted. Redirecting to downloads...");
-            // Add your redirect or download logic here
-        } else {
-            alert("Please accept the terms to continue.");
-        }
-    }
 </script>
-
 </body>
 </html>
