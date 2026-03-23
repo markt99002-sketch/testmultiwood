@@ -1,12 +1,8 @@
 function proceed() {
     const checkbox = document.getElementById("accept");
-
-    // Check if user accepted terms
     if (!checkbox.checked) {
-        alert("Please accept Terms & Conditions");
+        alert("Please accept Terms & Conditions to continue.");
         return;
     }
-
-    // Redirect to product page
     window.location.href = "products.html";
 }
