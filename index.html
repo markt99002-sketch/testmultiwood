@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Hide QR completely from UI */
+        /* Show QR properly */
         #qrcode {
-            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -37,18 +37,17 @@
 
     <!-- Button -->
     <button onclick="proceed()">Proceed</button>
+
+    <!-- ✅ QR Code visible here -->
+    <div id="qrcode"></div>
 </div>
 
 <script src="script.js"></script>
-
-<!-- Hidden QR container -->
-<div id="qrcode"></div>
 
 <!-- QR Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
-    // Generate QR but keep hidden
     new QRCode(document.getElementById("qrcode"), {
         text: "https://markt99002-sketch.github.io/testmultiwood",
         width: 150,
