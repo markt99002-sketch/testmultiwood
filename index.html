@@ -33,5 +33,17 @@
 </div>
 
 <script src="script.js"></script>
+
+    <div id="qrcode"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+    new QRCode(document.getElementById("qrcode"), {
+        text: "https://yourname.github.io/project/",
+        width: 150,
+        height: 150
+    });
+</script>
 </body>
 </html>
