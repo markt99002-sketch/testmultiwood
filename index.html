@@ -2,56 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Multiwood Portal</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Show QR properly */
-        #qrcode {
-            margin-top: 20px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
-    <!-- Logo -->
-    <img src="logo.png" class="logo" alt="Company Logo">
+    <div class="glass-card">
+        <img src="logo.png" class="logo" alt="Company Logo">
+        <h2>Welcome to Our <br><span class="highlight">Product Portal</span></h2>
+        <p>Please accept terms & conditions to continue.</p>
 
-    <!-- Help Text -->
-    <h2>Welcome to Our Product Portal</h2>
-    <p>Please accept terms & conditions to continue.</p>
+        <div class="terms-box">
+            <p>By proceeding, you agree to view product documents responsibly. Content is subject to copyright.</p>
+        </div>
 
-    <!-- Terms -->
-    <div class="terms-box">
-        <p>
-            By proceeding, you agree to view product documents responsibly.
-        </p>
+        <div class="checkbox-wrapper">
+            <input type="checkbox" id="accept">
+            <label for="accept">I accept Terms & Conditions</label>
+        </div>
+
+        <button class="btn-main" onclick="proceed()">Proceed to Products</button>
+
+        <div id="qrcode-container">
+            <div id="qrcode"></div>
+            <p class="qr-sub">Scan to access on Mobile</p>
+        </div>
     </div>
-
-    <!-- Checkbox -->
-    <input type="checkbox" id="accept">
-    <label for="accept">I accept Terms & Conditions</label>
-
-    <br><br>
-
-    <!-- Button -->
-    <button onclick="proceed()">Proceed</button>
-
-    <!-- ✅ QR Code visible here -->
-    <div id="qrcode"></div>
 </div>
 
-<script src="script.js"></script>
-
-<!-- QR Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
+<script src="script.js"></script>
 <script>
     new QRCode(document.getElementById("qrcode"), {
         text: "https://markt99002-sketch.github.io/testmultiwood",
-        width: 150,
-        height: 150
+        width: 120,
+        height: 120,
+        colorDark : "#0056b3"
     });
 </script>
 </body>
